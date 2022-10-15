@@ -7,7 +7,8 @@ import Article from './pages/articlePage';
 import HomePage from './pages/HomePage';
 import NavBar from './NavBar';
 import PageNotFound from './pages/NotFound';
-
+import LoginPage from './pages/LoginPage';
+import CreateAccontPage from './pages/CreateAccountPage';
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,8 @@ function App() {
            <Route path="/articles" element={<ArticleList />} />
            <Route path="/articles/:articleId" element={<Article />} />
            <Route path="/about" element = {<AboutPage />} />
+           <Route path="/login" element = {<LoginPage />} />
+           <Route path='/create-account' element = {<CreateAccontPage />} />
            <Route path="/*" element = {<PageNotFound />} />
         </Routes>
       </div>
