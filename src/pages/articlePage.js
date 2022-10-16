@@ -3,12 +3,16 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import PageNotFound from "./NotFound";
 import articles from "./article-content";
+import useUser from "../hooks/useUser";
 import CommentsList from "../components/CommentsList";
+
 
 
 const Article = () => {
     const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
     const { articleId } = useParams();
+
+    const {user, isLoading} = useUser();
 
 
     useEffect(() => {
@@ -36,7 +40,7 @@ const Article = () => {
         <>
             <h1>{article.title}</h1>
             <div className="upvotes-section">
-                <button onClick={addUpvote}>Upvote</button>
+               {user ? <button onClick={addUpvote}>Upvote</button> : <button>Login to upvote</button>} 
                 <p>This article has {articleInfo.upvotes} upvotes</p></div>
                  {article.content.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
