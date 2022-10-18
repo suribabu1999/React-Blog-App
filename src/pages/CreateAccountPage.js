@@ -1,6 +1,15 @@
 const CreateAccontPage = () => {
     return (
-        <h1>Create Account</h1>
+        <>
+            <div>
+                <form>
+                    <input placeholder="User email"></input>
+                    <input placeholder="Password"></input>
+                    <input placeholder="Confirm Password"></input>
+                    <button placeholder="Create Account"></button>
+                </form>
+            </div>
+        </>
     );
 }
 
